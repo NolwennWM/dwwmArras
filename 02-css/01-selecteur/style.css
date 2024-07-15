@@ -92,3 +92,99 @@ p:has(span)
     /* :has permet de selectionner un élément selon ses enfants. */
     color: firebrick;
 }
+/* ---------------- les pseudo éléments ------------------ */
+/* Les pseudo éléments sont écrit de la façon suivante "::nomDuPseudoElement" */
+article p::first-letter
+{
+    font-size: 50px;
+}
+main > p::first-line
+{
+    font-weight: bold;
+}
+/* 
+    before et after permettent d'ajouter un élément au début et à la fin d'un élément html.
+    Pour fonctionner ils doivent prendre obligatoirement la propriété "content"
+*/
+h1::before
+{
+    content: "C'est faux -->";
+    color: yellow;
+}
+h1::after
+{
+    content: "<- Il ment !";
+    color: darkgoldenrod;
+}
+/* ----------- classes, id et attributs ---------------- */
+#MenuImportant
+{
+    font-weight: bold;
+}
+.footer-list
+{
+    font-size: 50px;
+}
+/* 
+    un "#" pour selectionner un id et un "." pour une classe
+    On peut très bien selectionner un élément avec plusieurs classes: 
+    li.footer-list.peuImportant{}
+*/
+a[target]
+{
+    /* 
+        tout "a" qui possède l'attribut "target" 
+        Je pourrais même être plus précis et écrire :
+        a[target="_blank"]{}
+    */
+    font-style: italic;
+}
+a[href*="amazon"]
+{
+    /* tout "a" dont le href contient le mot "amazon" */
+    font-family: monospace;
+}
+a[href^="https"]::before
+{
+    /* tout "a" dont le href commence par "https" */
+    content: "\002713";
+}
+a[href$=".fr"]
+{
+    /* tout "a" dont le href se termine par ".fr" */
+    text-decoration:line-through;
+}
+
+article p, header p
+{
+    /* Une virgule permet de selectionner des éléments différents */
+    font-family: cursive, monospace, Courier;
+}
+:where(article, header) p
+{
+    /* Selectionne les p qui ont pour parent article ou header */
+    text-decoration: underline dotted;
+}
+/* ---------- priorités --------------- */
+/* 
+    Par défaut, css est lu de haut en bas, si une règle vient contredir une autre précédement écrite, celle plus bas s'appliquera 
+*/
+li:nth-child(1)
+{
+    font-weight: normal;
+}
+/* 
+    La règle ci-dessus ne fonctionne pas car plus un selecteur CSS à une grande priorité plus il sera difficile de le modifier.
+    Le niveau de priorité est calculé de la façon suivante :
+        0,0,0
+    Trois chiffres dont le premier est prioritaire sur le second, et le second sur le troisième.
+    Chaque selecteur fera augmenter l'un des nombres.
+        - Une balise HTML fera augmenter le dernier chiffre
+        - Une classe ou pseudo class fera augmenter le second
+        - Un id fera augmenter le premier.
+
+    Exemple :
+        1,0,0 aura la priorité sur 0,14,9
+        0,1,0 aura la priorité sur 0,0,12
+        0,2,0 aura la priorité sur 0,1,8
+*/
