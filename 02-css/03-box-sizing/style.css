@@ -85,4 +85,39 @@ footer
 {
     /* La propriété background est la version résumé de toute les propriétés de background (image, color, repeat...) */
     background: chartreuse;
+    /* 
+        width et height permettent de choisir la largeur et la hauteur d'un élément
+        min-width et min-height permettent de dire à l'élément qu'il doit faire au moins une certaines taille mais peut dépasser.
+        max-width et max-height permettent de dire à l'élément qu'il ne doit pas dépasser une taille mais peut être plus petit.
+    */
+    min-height: 150px;
+}
+li
+{
+    display: inline-block;
+    background-color: aqua;
+    /* 
+        permet de garder un ratio entre la largeur et la hauteur de mon élément.
+        Si les deux sont définis, le ratio ne fonctionne plus
+    */
+    aspect-ratio: 1/1;
+    /* Permet d'arrondir les angles d'un certain nombre de pixel, à 50% on obtient un rond */
+    border-radius: 50%;
+    padding: 1.3em 5px;
+    margin-left: 15%;
+}
+div
+{
+    width: 40vw;
+    max-height: 90vh;
+    margin: 5px auto;
+}
+img
+{
+    width: 100%;
+    height: 20vh;
+    /* Correspond au background-size mais adapté à une balise image */
+    object-fit: cover;
+    /* Correspond au background-position mais adapté à une balise image */
+    object-position: top;
 }
