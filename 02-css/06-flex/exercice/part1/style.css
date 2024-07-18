@@ -1,0 +1,64 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    
+#un{
+    background-color: aqua;
+}
+#deux{
+    background-color: lime;
+}
+#trois{
+    background-color: orangered;
+}
+#quatre{
+    background-color: violet;
+}
+#cinq{
+    background-color: blue;
+}
+#six{
+    background-color: yellow;
+}
+#sept{
+    background-color: rgb(77, 43, 4);
+}
+#huit{
+    background-color: grey;
+}
+#total{
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-top: 1vh;
+}
+.cube{
+    width: 49vw;
+    height: 24vh;
+}
+
+@media screen and (min-width: 600px) and (max-width: 899px){
+    #total{
+        padding: 0;
+    }
+    .cube{
+        height: 50vh;
+        width: 25vw;
+    }
+}
+@media screen and (min-width: 900px){
+    #total{
+        padding:0;
+        flex-wrap: nowrap;
+    }
+    .cube{
+        height: 100vh;
+        width: calc(100vw / 8);
+    }
+}

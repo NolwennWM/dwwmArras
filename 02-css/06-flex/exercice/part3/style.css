@@ -1,0 +1,49 @@
+*, ::before, ::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display:flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+header{
+    background-color: blueviolet;
+    height: 20vh;
+}
+main{
+    background-color: lightblue;
+    height: 40vh;
+}
+nav{
+    background-color: lime;
+    height: 20vh;
+}
+footer{
+    background-color: green;
+    height: 20vh;
+}
+@media screen and (min-width: 700px){
+    body{
+        flex-direction: row-reverse;
+    }
+    header{
+        width: 100vw;
+        height: 20vh;
+    }
+    main{
+        width: 85vw;
+        height: 60vh;
+    }
+    nav{
+        width: 15vw;
+        height: 60vh;
+    }
+    footer{
+        width: 100vw;
+        height: 20vh;
+    }
+}
