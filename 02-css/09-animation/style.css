@@ -110,3 +110,48 @@ body{
         rotate: 1440deg;
     }
 }
+body.scroll
+{
+    overflow: auto;
+    height: auto;
+}
+.scroll p
+{
+    margin-bottom: 20vh;
+}
+.scroll header
+{
+    position: fixed;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    background-color: lightcyan;
+}
+.scroll .progress
+{
+    height: 20px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: green;
+    scale: 0 1;
+    /* permet de changer l'origine de la transformation */
+    transform-origin: left;
+    /* ici j'indique que le navigateur doit choisir lui même la durée de l'animation (ne fonctionne pas sur firefox et safari) */
+    animation: scrollme auto linear;
+    /* J'indique au navigateur que la chronologie ne se base plus sur une durée mais sur le scroll
+    le scroll tout en haut représente 0% et tout en bas 100% */
+    animation-timeline: scroll();
+}
+.scroll .ball
+{
+    translate: -100% 0;
+    position: absolute;
+    bottom: 20px;
+    border-radius: 50%;
+    background-image: radial-gradient(at 30% 30%, rgb(251, 199,199), rgb(255, 140, 105));
+    width: 20px;
+    aspect-ratio: 1/1;
+    animation: scrollus auto linear;
+    animation-timeline: scroll();
+}
