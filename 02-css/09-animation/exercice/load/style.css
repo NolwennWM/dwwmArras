@@ -1,0 +1,52 @@
+.cercle{
+    position: absolute;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: transparent; 
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+}
+#cercle1{
+    top: 625px;
+    left: 700px;
+    border-top: pink solid 10px;
+    border-left: rgba(0, 0, 0, 0) solid 10px;
+    border-right: rgba(0, 0, 0, 0) solid 10px;
+    width:200px;
+    animation-name: tourne;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#cercle2{
+    top: 605px;
+    left: 680px;
+    border-top: rgb(142, 49, 65) solid 10px;
+    border-left: rgba(0, 0, 0, 0) solid 10px;
+    border-right: rgba(0, 0, 0, 0) solid 10px;
+    width: 250px;
+    animation-name: tourne;
+    animation-duration: 1.8s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#cercle3{
+    top: 585px;
+    left: 660px;
+    border-left: rgba(0, 0, 0, 0) solid 10px;
+    border-right: rgba(0, 0, 0, 0) solid 10px;
+    border-top: rgb(174, 72, 48) solid 10px;
+    width: 300px;
+    animation-name: tourne;
+    animation-duration: 2.4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+} 
+@keyframes tourne{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

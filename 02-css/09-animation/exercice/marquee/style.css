@@ -1,0 +1,37 @@
+*, ::before, ::after
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@keyframes texte{
+    from{
+        right:-155%
+    }
+    to{
+        right:158%
+    }
+    
+    
+}
+body{
+    background-color: black;
+    overflow: hidden;
+}
+p{
+    animation: texte;
+    position: absolute;
+    animation-duration: 15s;
+    top: 50%;
+    transform: translate(50%, 50%);
+    height: 150px;
+    animation-iteration-count: infinite;
+    white-space:nowrap;
+    animation-timing-function: linear;
+    font-size: 50px;
+    background-color: black;
+    color: white;
+}
+p::after{
+    content: "Il y'a dix types de personnes,ceux qui comprennent cette blague et ceux qui ne la comprennent pas.";
+}
