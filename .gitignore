@@ -1,4 +1,5 @@
 *.zip
 *.mp4
-/vendor
-/node_module
+fontawesome/
+vendor/
+node_modules/

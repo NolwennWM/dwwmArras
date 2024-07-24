@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/* --------- NESTING -------------- */
+/* 
+    La nidification permet d'inclure des selecteurs css dans d'autres selecteurs css.
+    Par exemple dire que seul les h2 présent dans une section sont modifié
+*/
+section {
+  background-color: aquamarine;
+}
+section h2 {
+  background-color: lightcoral;
+}
+section:hover {
+  transform: scale(1.5);
+  transform-origin: left;
+}
+
+/* ------------ Variables ------------------ */
+/* 
+    les variables sass sont plus simple d'utilisation et n'apparaîssent pas en css
+*/
+.menu, header {
+  background-color: violet;
+}
+
+/* ------------ Extends ---------------- */
+/* 
+    Les extends permettent de déclarer un morceau de code, réutilisable ailleurs.
+    Ou bien de réutiliser un code appliqué à une classe.
+*/
+main ul, header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ----------- MIXIN ------------------ */
+/* 
+    Les mixin ressemblent aux extends, si ce n'est qu'on va pouvoir le faire passer des paramètres
+*/
+div.copy {
+  font-size: 4rem;
+  background-color: mediumorchid;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  transform: translate(100px, 20px);
+}
+
+div.menu {
+  font-size: 3rem;
+  background-color: lightgreen;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -400px);
+}
+
+/*# sourceMappingURL=style.css.map */
