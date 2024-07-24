@@ -1,4 +1,24 @@
 @charset "UTF-8";
+/* -------- les boucles ----------- */
+ul {
+  background-color: cornflowerblue;
+}
+ul .truc1 {
+  font-size: 30px;
+}
+ul .truc2 {
+  font-size: 40px;
+}
+ul .truc3 {
+  font-size: 50px;
+}
+ul .truc4 {
+  font-size: 60px;
+}
+ul .truc5 {
+  font-size: 70px;
+}
+
 /* --------- NESTING -------------- */
 /* 
     La nidification permet d'inclure des selecteurs css dans d'autres selecteurs css.
@@ -58,7 +78,27 @@ div.menu {
 
 /* --------------- fonctions ---------------- */
 /* 
-
+    Les fonctions vont ressembler un peu aux mixins mais ne vont pas afficher une règle css, seulement retourner une valeur.
+    Certaines sont déjà défini dans SASS, d'autres peuvent être créée par nous même.
 */
+main li:nth-child(1) {
+  background-color: #8000ff;
+}
+main li:nth-child(2) {
+  background-color: #a64dff;
+}
+
+/* ----------- conditions ---------------- */
+div.copy {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+div.menu {
+  width: 10rem;
+  height: 5rem;
+  border-radius: 5px;
+}
 
 /*# sourceMappingURL=style.css.map */

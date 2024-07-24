@@ -1,3 +1,4 @@
+@use "liste";
 /* --------- NESTING -------------- */
 /* 
     La nidification permet d'inclure des selecteurs css dans d'autres selecteurs css.
@@ -73,5 +74,45 @@ div.menu
 }
 /* --------------- fonctions ---------------- */
 /* 
-
+    Les fonctions vont ressembler un peu aux mixins mais ne vont pas afficher une règle css, seulement retourner une valeur.
+    Certaines sont déjà défini dans SASS, d'autres peuvent être créée par nous même.
 */
+@function compLight($color)
+{
+    $comp: complement($color);
+    $light: lighten($comp, 15%);
+    @return $light;
+}
+main
+{
+    li:nth-child(1)
+    {
+        background-color: complement(chartreuse);
+    }
+    li:nth-child(2)
+    {
+        background-color: compLight(chartreuse);
+    }
+}
+/* ----------- conditions ---------------- */
+@mixin radius($w, $h)
+{
+    width: $w;
+    height: $h;
+    @if $w == $h
+    {
+        border-radius: 50%;
+    }
+    @else
+    {
+        border-radius: 5px;
+    }
+}
+div.copy
+{
+    @include radius(5rem, 5rem)
+}
+div.menu
+{
+    @include radius(10rem, 5rem)
+}
